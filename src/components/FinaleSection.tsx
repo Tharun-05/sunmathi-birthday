@@ -70,7 +70,7 @@ const Confetti = ({ count = 80, active = true }: { count?: number; active?: bool
   );
 };
 
-const smoothEase = [0.23, 1, 0.32, 1];
+const smoothEase = "easeInOut";
 
 interface FinaleSectionProps {
   message?: string;
