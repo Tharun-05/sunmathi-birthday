@@ -8,7 +8,7 @@ interface HeroSectionProps {
 }
 
 const spring = { type: "spring", stiffness: 80, damping: 20 };
-const smoothEase = [0.23, 1, 0.32, 1];
+const smoothEase = "easeInOut";
 
 const HeroSection = memo(function HeroSection({
   title = "Princess Sunmathi 👑",
