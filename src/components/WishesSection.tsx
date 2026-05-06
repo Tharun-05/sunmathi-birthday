@@ -12,7 +12,7 @@ interface WishesSectionProps {
   intervalMs?: number;
 }
 
-const smoothEase = [0.23, 1, 0.32, 1];
+const smoothEase = "easeInOut";
 
 const defaultWishes: Wish[] = [
   { from: "Mom & Dad", message: "You are our greatest blessing, our forever sunshine." },
