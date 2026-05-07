@@ -22,8 +22,8 @@ const placeholderGradients = [
   "from-purple-300 via-pink-400 to-amber-300",
 ];
 
-const spring = { type: "spring", stiffness: 100, damping: 18 };
-const smoothEase = "easeInOut";
+const spring = { type: "spring" as const, stiffness: 100, damping: 18 };
+const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 
 const GallerySection = memo(function GallerySection({ images }: GallerySectionProps) {
   const [active, setActive] = useState<number | null>(null);

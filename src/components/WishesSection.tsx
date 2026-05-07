@@ -12,8 +12,6 @@ interface WishesSectionProps {
   intervalMs?: number;
 }
 
-const smoothEase = "easeInOut";
-
 const defaultWishes: Wish[] = [
   { from: "Mom & Dad", message: "You are our greatest blessing, our forever sunshine." },
   { from: "Grandma", message: "May your life be filled with endless love and laughter." },

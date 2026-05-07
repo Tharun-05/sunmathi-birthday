@@ -70,7 +70,7 @@ const Confetti = ({ count = 80, active = true }: { count?: number; active?: bool
   );
 };
 
-const smoothEase = "easeInOut";
+const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 
 interface FinaleSectionProps {
   message?: string;
@@ -79,7 +79,7 @@ interface FinaleSectionProps {
 
 const FinaleSection = memo(function FinaleSection({
   message = "Our little princess, our biggest joy",
-  name = "Sunmathi",
+  name = "Sanmathi",
 }: FinaleSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);

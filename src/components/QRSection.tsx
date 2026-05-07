@@ -7,10 +7,10 @@ interface QRSectionProps {
   label?: string;
 }
 
-const smoothEase = "easeInOut";
+const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 
 const QRSection = memo(function QRSection({
-  url = typeof window !== "undefined" ? window.location.href : "https://sunmathi.birthday",
+  url = typeof window !== "undefined" ? window.location.href : "https://sanmathi.birthday",
   label = "Scan to relive the magic",
 }: QRSectionProps) {
   return (

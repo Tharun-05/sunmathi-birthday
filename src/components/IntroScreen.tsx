@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const INTRO_LINES = [
   "In a magical kingdom...",
   "A princess was born",
-  "Sunmathi 👑",
+  "Sanmathi 👑",
 ];
 
 const LINE_DELAY = 0.6;
