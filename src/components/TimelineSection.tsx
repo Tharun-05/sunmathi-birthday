@@ -20,7 +20,7 @@ const defaultMonths = [
   { month: "Month 12", emoji: "🎂", title: "One Year!", note: "A princess turns one." },
 ];
 
-const smoothEase = "easeInOut";
+const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 
 const Card = ({
   data,

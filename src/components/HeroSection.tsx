@@ -7,11 +7,11 @@ interface HeroSectionProps {
   subtitle?: string;
 }
 
-const spring = { type: "spring", stiffness: 80, damping: 20 };
-const smoothEase = "easeInOut";
+const spring = { type: "spring" as const, stiffness: 80, damping: 20 };
+const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 
 const HeroSection = memo(function HeroSection({
-  title = "Princess Sunmathi 👑",
+  title = "Princess Sanmathi",
   subtitle = "A magical journey begins",
 }: HeroSectionProps) {
   return (
@@ -68,9 +68,21 @@ const HeroSection = memo(function HeroSection({
             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, ease: smoothEase, delay: 0.6 }}
-            className="relative mt-6 heading-glow heading-premium heading-pulse-glow text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
+            className="relative mt-6 heading-premium text-5xl sm:text-6xl md:text-7xl lg:text-8xl flex items-center justify-center gap-4"
           >
-            {title}
+            <span className="text-amber-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]">
+              {title}
+            </span>
+            <span
+              className="inline-flex items-center"
+              style={{
+                fontSize: "0.85em",
+                filter:
+                  "drop-shadow(0 0 8px rgba(251,191,36,1)) drop-shadow(0 0 4px rgba(255,255,255,0.8))",
+              }}
+            >
+              👑
+            </span>
           </motion.h1>
 
           <motion.p

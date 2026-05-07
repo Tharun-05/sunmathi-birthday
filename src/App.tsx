@@ -30,7 +30,7 @@ function App() {
   const location = useLocation();  // ✅ ADD THIS
 
   // ✅ ADMIN PAGE OVERRIDE (no UI conflict)
-  if (location.pathname === "/admin-sunmathi-secret") {
+  if (location.pathname === "/admin-sanmathi-secret") {
     return <Admin />;
   }
 

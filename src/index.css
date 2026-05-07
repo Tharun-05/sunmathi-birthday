@@ -677,9 +677,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  animation: headingGradient 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.4))
-         drop-shadow(0 0 60px rgba(244, 114, 182, 0.25));
+  /* Both animations run together — gradient shift + subtle glow pulse */
+  animation: headingGradient 6s ease-in-out infinite,
+             headingPulseGlow 3s ease-in-out infinite;
   text-shadow: none;
 }
 @keyframes headingGradient {
@@ -687,18 +687,19 @@
   50% { background-position: 100% 50%; }
 }
 
-/* Pulsing glow effect for headings */
+/* Pulsing glow effect for headings — kept modest so it never washes out the text */
 .heading-pulse-glow {
-  animation: headingPulseGlow 3s ease-in-out infinite;
+  animation: headingGradient 6s ease-in-out infinite,
+             headingPulseGlow 3s ease-in-out infinite;
 }
 @keyframes headingPulseGlow {
   0%, 100% { 
-    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3))
-           drop-shadow(0 0 40px rgba(244, 114, 182, 0.2));
+    filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.45))
+           drop-shadow(0 0 32px rgba(244, 114, 182, 0.2));
   }
   50% { 
-    filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.5))
-           drop-shadow(0 0 70px rgba(244, 114, 182, 0.35));
+    filter: drop-shadow(0 0 28px rgba(251, 191, 36, 0.6))
+           drop-shadow(0 0 48px rgba(244, 114, 182, 0.25));
   }
 }
 
