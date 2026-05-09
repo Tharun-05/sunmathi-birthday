@@ -1,5 +1,6 @@
 import { memo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import photo1 from "../assets/gallery/photo1.jpg";
 
 interface GalleryItem {
   src: string;
@@ -28,9 +29,24 @@ const smoothEase: [number, number, number, number] = [0.23, 1, 0.32, 1];
 const GallerySection = memo(function GallerySection({ images }: GallerySectionProps) {
   const [active, setActive] = useState<number | null>(null);
 
-  const items: (GalleryItem | null)[] = images?.length
-    ? images
-    : new Array(8).fill(null);
+  const items: GalleryItem[] = [
+  {
+    src: photo1,
+    caption: "Little Princess ✨",
+  },
+  // {
+  //   src: photo2,
+  //   caption: "Cute Smile 💖",
+  // },
+  // {
+  //   src: photo3,
+  //   caption: "Royal Memories 👑",
+  // },
+  // {
+  //   src: photo4,
+  //   caption: "Magical Moments 🌸",
+  // },
+];
 
   return (
     <section className="relative h-screen w-full overflow-hidden noise spotlight">
